@@ -1,4 +1,4 @@
-package com.cpc.dp.builder;
+package com.ps.dp.builder;
 
 //Interface implemented by "products"
 public interface UserDTO {
