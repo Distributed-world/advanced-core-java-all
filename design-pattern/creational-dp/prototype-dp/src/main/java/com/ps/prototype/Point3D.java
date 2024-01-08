@@ -7,9 +7,15 @@ public class Point3D {
 	public static final Point3D ZERO = new Point3D(0, 0, 0);
 
 	public Point3D(float x, float y, float z) {
+		super();
 		this.x = x;
 		this.y = y;
 		this.z = z;
+	}
+
+	@Override
+	public String toString() {
+		return "Point3D [x=" + x + ", y=" + y + ", z=" + z+ ", hashcode=" +System.identityHashCode(this)+ "]";
 	}
 
 	public Point3D normalize() {
@@ -19,6 +25,13 @@ public class Point3D {
 
 	private float magnitude() {
 		return (float) Math.sqrt(x * x + y * y + z * z);
+	}
+
+	
+
+	public Point3D() {
+		super();
+		 
 	}
 
 	public Point3D multiply(float scale) {
