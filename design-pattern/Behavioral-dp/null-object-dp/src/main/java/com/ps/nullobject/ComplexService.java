@@ -2,29 +2,29 @@ package com.ps.nullobject;
 
 public class ComplexService {
 
-	private StorageService storage;
-
+	private Service storage;
+	
 	private String reportName;
-
-	public ComplexService(StorageService storage) {
+	
+	public ComplexService(Service storage) {
 		this.storage = storage;
 		reportName = "A Complex Report";
 	}
-
-	public ComplexService(String reportName, StorageService storage) {
+	
+	public ComplexService(String reportName, Service storage) {
 		this.storage = storage;
 		this.reportName = reportName;
 	}
-
+	
 	public void generateReport() {
 		System.out.println("Starting a complex report build!");
-
+		
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
+		
 		System.out.println("Done with report..");
 		storage.save(new Report(reportName));
 	}
