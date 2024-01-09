@@ -2,13 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ps</groupId>
-    <artifactId>design-pattern</artifactId>
+    <artifactId>Behavioral-dp</artifactId>
     <version>1.0.0</version>
   </parent>
-  <artifactId>Behavioral-dp</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>null-object-dp</module>
-  	<module>chain-of-responsibility-dp</module>
-  </modules>
+  <artifactId>chain-of-responsibility-dp</artifactId>
 </project>
