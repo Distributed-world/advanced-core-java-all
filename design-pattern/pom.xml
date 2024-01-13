@@ -18,5 +18,7 @@
   <modules>
   	<module>creational-dp</module>
   	<module>Behavioral-dp</module>
+  	<module>Structural-dp</module>
+  	<module>all-java11-dp</module>
   </modules>
 </project>
