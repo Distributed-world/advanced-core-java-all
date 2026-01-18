@@ -10,5 +10,15 @@
   <modules>
   	<module>null-object-dp</module>
   	<module>chain-of-responsibility-dp</module>
+  	<module>command-dp</module>
+  	<module>interpreter-dp</module>
+  	<module>mediator-dp</module>
+  	<module>iterator-dp</module>
+  	<module>memento-dp</module>
+  	<module>observer-dp</module>
+  	<module>state-dp</module>
+  	<module>strategy-dp</module>
+  	<module>template-method-dp</module>
+  	<module>visitor-dp</module>
   </modules>
 </project>

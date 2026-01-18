@@ -1,20 +1,12 @@
 package com.ps.dp.builder2;
 
-public class Address extends com.ps.dp.builder.Address {
-
-	public Address(String houseNumber, String street, String city, String zipcode, String state) {
-		super();
-		setHouseNumber(houseNumber);
-		setStreet(street);
-		setCity(city);
-		setZipcode(zipcode);
-		setState(state);
+public record Address(String houseNumber, String street, String city, String zipcode, String state) {
+	private Address(AddressBuilder builder) {
+		this(builder.houseNumber, builder.street, builder.city, builder.zipcode, builder.state);
 	}
-
 	public static AddressBuilder getBuilder() {
 		return new AddressBuilder();
 	}
-
 	public static class AddressBuilder {
 		private String houseNumber;
 
@@ -52,7 +44,7 @@ public class Address extends com.ps.dp.builder.Address {
 		}
 
 		public Address build() {
-			return new Address(houseNumber, street, city, zipcode, state);
+			return new Address(this);
 		}
 	}
 }

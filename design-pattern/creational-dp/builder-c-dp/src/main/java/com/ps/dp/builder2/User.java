@@ -2,43 +2,14 @@ package com.ps.dp.builder2;
 
 import java.time.LocalDate;
 
+public record User(UserType userType, String firstName, String lastName, LocalDate birthday, Address address) {
 
-public class User {
-	private String firstName;
-	private String lastName;
-	private LocalDate birthday;
-	private Address address;
-
-	private User() {
-		super();
+	private User(UserBuilder b) {
+		this(b.userType, b.firstName, b.lastName, b.birthday, b.address);
 	}
 
-	private User(String firstName, String lastName, LocalDate birthday, Address address) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.birthday = birthday;
-		this.address = address;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public static UserBuilder getBuilder() {
-		return new UserBuilder();
+	public static UserBuilder getBuilder(UserType userType) {
+		return new UserBuilder(userType);
 	}
 
 	static class UserBuilder {
@@ -46,6 +17,15 @@ public class User {
 		private String lastName;
 		private LocalDate birthday;
 		private Address address;
+		private UserType userType;
+
+		private UserBuilder(UserType userType) {
+			if (userType == null) {
+				throw new IllegalArgumentException("User type Required!");
+
+			}
+			this.userType = userType;
+		}
 
 		public UserBuilder withFirstName(String firstName) {
 			this.firstName = firstName;
@@ -68,7 +48,7 @@ public class User {
 		}
 
 		public User build() {
-			return new User(firstName, lastName, birthday, address);
+			return new User(this);
 		}
 
 	}

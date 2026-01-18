@@ -5,6 +5,8 @@ public class SingletonLazy {
 
 	private SingletonLazy() {
 		super();
+		if (INSTANCE != null)
+			throw new InstantiationError("Allready Instansiated...!!");
 		System.out.println(this.getClass().getCanonicalName() + ": Constructor called....");
 	}
 

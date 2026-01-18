@@ -2,7 +2,8 @@ package com.ps;
 
 public enum SingltonEnum {
 	INSTANCE;
-	public void configuration() {
-		
-	}
+	@Override
+	  public String toString() {
+	    return getDeclaringClass().getCanonicalName() + "@" + hashCode();
+	  }
 }
